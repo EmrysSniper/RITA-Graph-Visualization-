@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Aircraft Visualization Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2> 3D Aircraft Visualization Dashboard</h2>
+
+  <label for="graphSelector"><strong>Select Graph View:</strong></label>
+  <select id="graphSelector" onchange="switchGraph()">
+    <option value="All_Aircrafts_3D.html">All Aircrafts 3D</option>
+    <option value="Interactive_3D_Aircraft_Simulated.html">Aircraft by Similarity (Simulated)</option>
+    <option value="Clean_Aircraft_3D_Visualization.html">Clean Aircraft Visualization</option>
+  </select>
+
+  <iframe id="graphFrame" src="All_Aircrafts_3D.html"></iframe>
+
+  <script>
+    function switchGraph() {
+      const selected = document.getElementById("graphSelector").value;
+      document.getElementById("graphFrame").src = selected;
+    }
+  </script>
+
+</body>
+</html>
